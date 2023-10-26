@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./assets/spellPagesStyle.css"
+import Axios from "axios";
+import RenderHtml from 'react-native-render-html'
 
 function SpellPages(){
     let navigate = useNavigate();
+
+    const [spellList, setSpellList] = useState([]);
+
+    const getSpells = () => {
+        Axios.get("http://localhost:3001/getAllSpells").then((response) => {
+            setSpellList(response.data);
+        })
+    }
+    
+
     return(
         <div className="spellPage">
             <div>
@@ -17,6 +29,23 @@ function SpellPages(){
             <button onClick={() => {navigate("/tableOfContents")}}>
                 Go to Table of Contents!
             </button>
+
+            <div className="spell">
+                <button onClick={getSpells}>
+                    Get Spells!
+                </button>
+                {spellList.map((val, key) => {
+                    const source = {
+                        html: `
+                      ${val.description}`
+                      };
+                    return (
+                        <div key={key}>
+                            <RenderHtml source={source}/>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }
