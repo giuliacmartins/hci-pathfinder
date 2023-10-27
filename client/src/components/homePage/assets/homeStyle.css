@@ -15,8 +15,38 @@ body, html {
     justify-content: center; 
     align-items: center; 
 }
-  
-button {
-    margin-top: 20px;
+
+.homePageHeader {
+    text-align: center;
+    color: white;
+    padding: 20px; 
 }
   
+.spellBook button {
+    background: none; 
+    border: none; 
+    padding: 0; 
+    cursor: pointer; 
+}
+  
+.spellBook button:focus {
+    outline: none; 
+}
+  
+.spellBook img {
+    max-width: 100%;
+    display: block;
+}
+
+.spellBook {
+    position: relative; 
+    display: inline-block; 
+}
+
+.arcaneImage {
+    position: absolute; 
+    top: 10%; 
+    left: 55.5%;
+    transform: translateX(-50%); 
+    z-index: 1; 
+}
