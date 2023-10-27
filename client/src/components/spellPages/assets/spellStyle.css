@@ -1,0 +1,10 @@
+.grid-container{
+    background-color: blue;
+}
+
+.spellBox{
+    display: flex;
+    background-color: blue;
+    width:30rem;
+    /* margin-left: 1rem; */
+}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./assets/spellPagesStyle.css"
+import "./assets/spellStyle.css"
 import Axios from "axios";
 import RenderHtml from 'react-native-render-html'
 
@@ -35,16 +36,14 @@ function SpellPages(){
                     Get Spells!
                 </button>
                 {spellList.map((val, key) => {
-                    const source = {
-                        html: `
-                      ${val.description}`
-                      };
+                    let description = {html: `${val.description}`};
                     return (
-                        <div key={key}>
-                            <RenderHtml source={source}/>
+                        <div key={key} className="spellBox">
+                            <RenderHtml source={description}/>
                         </div>
                     )
                 })}
+             
             </div>
         </div>
     )
