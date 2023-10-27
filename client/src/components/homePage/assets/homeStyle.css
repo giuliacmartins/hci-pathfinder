@@ -1,3 +1,22 @@
-.homePage{
-    background-color: rgb(170, 166, 229);
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
+  
+.homePage {
+    height: 100vh; 
+    background-image: url('./photos/backgroundSpellBook.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
+  
+button {
+    margin-top: 20px;
+}
+  
