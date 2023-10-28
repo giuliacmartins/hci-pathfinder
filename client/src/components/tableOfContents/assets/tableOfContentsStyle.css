@@ -1,4 +1,41 @@
 .tableOfContentsPage{
-    background-color: rgb(248, 246, 150);
+    height: 100vh; 
+    background-image: url('./photos/pagesBackground.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.navbar img {
+    cursor: pointer;
+}
+
+.tocTitle {
+    margin-top: 30px;
+    align-self: flex-start;
+    margin-left: 20px; 
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 10px; 
+}
+
+.pagination img {
+    cursor: pointer;
 }
