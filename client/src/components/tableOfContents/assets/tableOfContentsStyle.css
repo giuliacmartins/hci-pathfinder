@@ -1,41 +1,86 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 .tableOfContentsPage{
     height: 100vh; 
     background-image: url('./photos/pagesBackground.png');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
     display: flex; 
     flex-direction: column; 
-    justify-content: center; 
+    justify-content: space-between; 
     align-items: center; 
+    padding: 20px;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px 0;
+}
+
+.navbar img.homeImage {
+    margin-left: auto; 
+    cursor: pointer;
 }
 
 .navbar img {
     cursor: pointer;
+    max-width: 50%;
+    max-height: 50%;
 }
 
 .tocTitle {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
     margin-top: 30px;
-    align-self: flex-start;
-    margin-left: 20px; 
+}
+
+.column {
+    
+}
+
+.half {
+    flex-basis: 100%;  
+}
+
+.tocTitle img {
+    max-width: 55%;
 }
 
 .pagination {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 10px 20px;
-    position: absolute;
-    bottom: 10px; 
+    align-items: center;
+    margin-bottom: 30px;
 }
 
 .pagination img {
+    max-width: 50px;
     cursor: pointer;
+}
+
+.arcaneText {
+    text-align: left;
+    margin-left: 50px;
+    margin-bottom: 25px;
+}
+
+.arcaneText2 {
+    text-align: left;
+    margin-left: 100px;
+    margin-bottom: 25px;
+}
+
+.smallImg {
+    max-width: 50%;
+    max-height: 50%;
 }
