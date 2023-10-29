@@ -43,10 +43,6 @@ body, html {
     margin-top: 30px;
 }
 
-.column {
-    
-}
-
 .half {
     flex-basis: 100%;  
 }

@@ -12,6 +12,7 @@ import damageImage from "./assets/photos/damage.png";
 import combatUtilityImage from "./assets/photos/combatUtility.png";
 import buffImage from "./assets/photos/buff.png";
 import backArrowImage from "./assets/photos/backArrow.png";
+import allArcaneSpellsTitleImage from "./assets/photos/allArcaneSpellsTitleImg.png";
 
 function TableOfContents3(){
     let navigate = useNavigate();
@@ -38,7 +39,7 @@ function TableOfContents3(){
                 </div>
                 <div className="column half">
                     <div className="arcaneText2">
-                        
+                        <img src={allArcaneSpellsTitleImage} alt="Arcane Spells"/>
                     </div>
                 </div>
             </div>
