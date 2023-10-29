@@ -35,6 +35,18 @@ body, html {
     max-height: 50%;
 }
 
+.navbar img.spellCart {
+    margin-left: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.navbar img:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease-in-out;
+}
+
+
 .tocTitle {
     display: flex;
     justify-content: center; 
@@ -46,7 +58,13 @@ body, html {
 }
 
 .tocTitle img {
-    max-width: 55%;
+    max-width: 75%;
+}
+
+.leaf img {
+    margin-top: 0;
+    width: 10px;
+    height: auto;
 }
 
 .pagination {
@@ -54,29 +72,56 @@ body, html {
     justify-content: space-between;
     width: 100%;
     align-items: center;
+    margin-top: 0;
     margin-bottom: 30px;
 }
 
 .pagination img {
-    max-width: 50px;
+    max-width: 35px;
     cursor: pointer;
+}
+
+.pagination img:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease-in-out;
 }
 
 .arcaneText {
     text-align: left;
-    margin-left: 50px;
+    margin-left: 35px;
     margin-bottom: 25px;
 }
 
 .arcaneText2 {
     text-align: left;
-    margin-left: 35%;
-    margin-bottom: 25px;
+    margin-left: 15%;
+    margin-bottom: 50px;
+}
+
+.arcaneText2 ul {
+    text-align: left;
+    margin-left: 25px;
+}
+
+.arcaneSpellText {
+    /* text-align: left; */
+    margin-left: 15%;
+    margin-bottom: 50px;
+}
+
+.arcaneSpellText ul {
+    text-align: left;
+    margin-left: 15px;
 }
 
 .smallImg {
-    max-width: 50%;
-    max-height: 50%;
+    width: 20px;
+    height: auto;
+}
+
+.smallImg2 {
+    width: 10px;
+    height: auto;
 }
 
 .column.half {
@@ -105,5 +150,5 @@ body, html {
     top: 25%;
     right: 5%;
     transform: translate(-50%, -50%); */
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }

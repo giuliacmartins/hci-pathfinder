@@ -20,25 +20,25 @@ function TableOfContents3(){
         <div className="tableOfContentsPage">
             <div className="navbar">
                 <img src={searchImage} alt="Search" onClick={() => {/* Navigate to search page */}}/>
-                <img src={spellCartImage} alt="Spell Cart" onClick={() => {/* Navigate to cart page */}}/>
+                <img className="spellCart" src={spellCartImage} alt="Spell Cart" onClick={() => {/* Navigate to cart page */}}/>
                 <img className="homeImage" src={homeBlackImage} alt="Home" onClick={() => navigate("/")}/>
             </div>
             <div className="tocTitle">
-                <div className="column hlaf">
+                <div className="column half">
                     <img className="toc" src={tableOfContentsTitle} alt="Table of Contents"/>
                     <div className="arcaneText">
                         <h2><u>Arcane 10th-Level Spells</u></h2>
                         <ul> 
                             <li>Damage<img className="smallImg" src={damageImage} alt="Damage"/></li>
-                            <li>Buff<img className="smallImg" src={buffImage} alt="Buff"/></li>
-                            <li>Debuff<img className="smallImg" src={debuffImage} alt="Debuff"/></li>
+                            <li>Buff<img className="smallImg2" src={buffImage} alt="Buff"/></li>
+                            <li>Debuff<img className="smallImg2" src={debuffImage} alt="Debuff"/></li>
                             <li>Combat Utility<img className="smallImg" src={combatUtilityImage} alt="Combat"/></li>
                             <li>Out of Combat Utility<img className="smallImg" src={outOfCombatUtilityImage} alt="Out of Combat"/></li>
                         </ul>
                     </div>
                 </div>
                 <div className="column half">
-                    <div className="arcaneText2">
+                    <div className="arcaneSpellText">
                         <img className="arcaneSpellsHeader" src={allArcaneSpellsTitleImage} alt="Arcane Spells"/>
                         <div className="arcaneSpellsList">
                             <div className="column">
@@ -125,20 +125,6 @@ function TableOfContents3(){
                 <img src={backArrowImage} alt="Previous" onClick={() => navigate("/tableofContents2")}/>
                 <img src={forwardArrowImage} alt="Next" onClick={() => navigate("/spellPages")}/>
             </div>
-            
-            
-            
-            {/* <div>
-                Hello! This is the Table of Contents Page!
-            </div>
-            
-            <button onClick={() => {navigate("/spellPages")}}>
-                Go to Spell Pages!
-            </button>
-
-            <button onClick={() => {navigate("/")}}>
-                Go to Home!
-            </button> */}
         </div>
     )
 }
