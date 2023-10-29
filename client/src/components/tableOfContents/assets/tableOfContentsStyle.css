@@ -37,10 +37,8 @@ body, html {
 
 .tocTitle {
     display: flex;
-    justify-content: space-between; 
-    align-items: center;
+    justify-content: center; 
     width: 100%;
-    margin-top: 30px;
 }
 
 .half {
@@ -72,11 +70,40 @@ body, html {
 
 .arcaneText2 {
     text-align: left;
-    margin-left: 100px;
+    margin-left: 35%;
     margin-bottom: 25px;
 }
 
 .smallImg {
     max-width: 50%;
     max-height: 50%;
+}
+
+.column.half {
+    width: 50%;
+}
+
+.arcaneSpellsList {
+    display: flex;
+    justify-content: space-between;
+}
+
+.arcaneSpellsList .column {
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arcaneSpellsList .column ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;   
+}
+
+.arcaneSpellsHeader {
+    /* position: absolute;
+    top: 25%;
+    right: 5%;
+    transform: translate(-50%, -50%); */
+    margin-bottom: 20px;
 }

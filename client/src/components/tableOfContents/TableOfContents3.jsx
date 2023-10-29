@@ -27,7 +27,7 @@ function TableOfContents3(){
                 <div className="column hlaf">
                     <img className="toc" src={tableOfContentsTitle} alt="Table of Contents"/>
                     <div className="arcaneText">
-                        <h2><u>Arcane 10th-LEvel Spells</u></h2>
+                        <h2><u>Arcane 10th-Level Spells</u></h2>
                         <ul> 
                             <li>Damage<img className="smallImg" src={damageImage} alt="Damage"/></li>
                             <li>Buff<img className="smallImg" src={buffImage} alt="Buff"/></li>
@@ -39,7 +39,85 @@ function TableOfContents3(){
                 </div>
                 <div className="column half">
                     <div className="arcaneText2">
-                        <img src={allArcaneSpellsTitleImage} alt="Arcane Spells"/>
+                        <img className="arcaneSpellsHeader" src={allArcaneSpellsTitleImage} alt="Arcane Spells"/>
+                        <div className="arcaneSpellsList">
+                            <div className="column">
+                                <ul>
+                                    <li><strong><u>Cantrips</u></strong></li>
+                                    <li>Acid Splash</li>
+                                    <li>Ancient Dust</li>
+                                    <li>Approximate</li>
+                                    <li>Bullhorn</li>
+                                    <li>Chill Touch</li>
+                                    <li>Dancing Lights</li>
+                                    <li>Daze</li>
+                                    <li>Deep Breath</li>
+                                    <li>Detect Magic</li>
+                                    <li>Detect Metal</li>
+                                    <li>Draw Moisture</li>
+                                    <li>Eat Fire</li>
+                                    <li>Electric Arc</li>
+                                    <li>Elemental</li>
+                                    <li>Counter</li>
+                                    <li>Galse Blast</li>
+                                    <li>Ghost Sound</li>
+                                    <li>Glass Shield</li>
+                                    <li>Gouging Claw</li>
+                                    <li>Illuminate</li>
+                                </ul>
+                            </div>
+
+                            <div className="column">
+                                <ul>
+                                    <li>Infectious Enthusiasm</li>
+                                    <li>Invoke True Name</li>
+                                    <li>Light</li>
+                                    <li>Mage Hand</li>
+                                    <li>Message</li>
+                                    <li>Musical Accompaniment</li>
+                                    <li>Neddle Darts</li>
+                                    <li>Phase Bolt</li>
+                                    <li>Prestidigitation</li>
+                                    <li>Produce Flame</li>
+                                    <li>Protect Companion</li>
+                                    <li>Puff of Poison</li>
+                                    <li>Ray of Frost</li>
+                                    <li>Read Aura</li>
+                                    <li>Root Reading</li>
+                                    <li>Scatter Scree</li>
+                                    <li>Shield</li>
+                                    <li>Sigil</li>
+                                    <li>Slashing Gust</li>
+                                    <li>Spout</li>
+                                </ul>
+                            </div>
+
+                            <div className="column">
+                                <ul>
+                                    <li>Take Root</li>
+                                    <li>Tanglefoot</li>
+                                    <li>Telekinetic</li>
+                                    <li>Projectile</li>
+                                    <li>Timber</li>
+                                    <li>Time Sense</li>
+                                    <li>Torturous Trauma</li>
+                                    <li>Tremor Signs</li>
+                                    <li>Warp Step</li>
+                                    <li><strong><u>1st Lebel Spells</u></strong></li>
+                                    <li>Acidic Burst</li>
+                                    <li>Admonishing Ray</li>
+                                    <li>Agitate</li>
+                                    <li>Air Bubble</li>
+                                    <li>Airburst</li>
+                                    <li>Alarm</li>
+                                    <li>Animate Dead</li>
+                                    <li>Animate Rope</li>
+                                    <li>Ant Haul</li>
+                                    <li>Anticipate Peril</li>
+                                    <li>Aqueous Blast</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

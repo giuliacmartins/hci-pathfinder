@@ -26,7 +26,7 @@ function TableOfContents2(){
                 <div className="column hlaf">
                     <img className="toc" src={tableOfContentsTitle} alt="Table of Contents"/>
                     <div className="arcaneText">
-                        <h2><u>Arcane 5th-LEvel Spells</u></h2>
+                        <h2><u>Arcane 5th-Level Spells</u></h2>
                         <ul> 
                             <li>Damage<img className="smallImg" src={damageImage} alt="Damage"/></li>
                             <li>Buff<img className="smallImg" src={buffImage} alt="Buff"/></li>
