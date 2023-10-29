@@ -1,16 +1,154 @@
-.tableOfContentsPage{
-    position:fixed;
-    padding:0;
-    margin:0;
-    background-color: rgb(248, 246, 150);
-    top:0;
-    left:0;
-    width: 100%;
+body, html {
+    margin: 0;
+    padding: 0;
     height: 100%;
+}
 
-    align-items: center;
+.tableOfContentsPage{
+    height: 100vh; 
+    background-image: url('./photos/pagesBackground.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px;
+}
+
+.navbar {
     display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.navbar img.homeImage {
+    margin-left: auto; 
+    cursor: pointer;
+}
+
+.navbar img {
+    cursor: pointer;
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.navbar img.spellCart {
+    margin-left: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.navbar img:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.tocTitle {
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+}
+
+.half {
+    flex-basis: 100%;  
+}
+
+.tocTitle img {
+    max-width: 75%;
+}
+
+.leaf img {
+    margin-top: 0;
+    width: 10px;
+    height: auto;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.pagination img {
+    max-width: 35px;
+    cursor: pointer;
+}
+
+.pagination img:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.arcaneText {
+    text-align: left;
+    margin-left: 35px;
+    margin-bottom: 25px;
+}
+
+.arcaneText2 {
+    text-align: left;
+    margin-left: 15%;
+    margin-bottom: 50px;
+}
+
+.arcaneText2 ul {
+    text-align: left;
+    margin-left: 25px;
+}
+
+.arcaneSpellText {
+    /* text-align: left; */
+    margin-left: 15%;
+    margin-bottom: 50px;
+}
+
+.arcaneSpellText ul {
+    text-align: left;
+    margin-left: 15px;
+}
+
+.smallImg {
+    width: 20px;
+    height: auto;
+}
+
+.smallImg2 {
+    width: 10px;
+    height: auto;
+}
+
+.column.half {
+    width: 50%;
+}
+
+.arcaneSpellsList {
+    display: flex;
+    justify-content: space-between;
+}
+
+.arcaneSpellsList .column {
+    flex: 1;
     flex-direction: column;
-    overflow-x: auto;
-    overflow-y: auto;
+    align-items: center;
+}
+
+.arcaneSpellsList .column ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;   
+}
+
+.arcaneSpellsHeader {
+    /* position: absolute;
+    top: 25%;
+    right: 5%;
+    transform: translate(-50%, -50%); */
+    margin-bottom: 10px;
 }
