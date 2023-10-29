@@ -1,10 +1,33 @@
 .grid-container{
-    background-color: blue;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 8rem;
+    row-gap: 2rem;
 }
 
 .spellBox{
     display: flex;
-    background-color: blue;
-    width:30rem;
-    /* margin-left: 1rem; */
+    background-color: rgb(150, 150, 218);
+    width:42rem;
+    align-items: left;
+    flex-direction: column;
+    column-gap: 2rem;
+
+    
+}
+
+.spellPicAndStats{
+    display: flex;
+    background-color: rgb(218, 160, 150);
+    align-items: center;
+    flex-direction: row;
+    column-gap: 2rem;
+
+}
+
+.spellStats{
+    display: flex;
+    background-color: rgb(150, 218, 176);
+    align-items: center;
+    flex-direction: column;
 }

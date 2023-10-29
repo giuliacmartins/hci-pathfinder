@@ -35,14 +35,31 @@ function SpellPages(){
                 <button onClick={getSpells}>
                     Get Spells!
                 </button>
-                {spellList.map((val, key) => {
-                    let description = {html: `${val.description}`};
-                    return (
-                        <div key={key} className="spellBox">
-                            <RenderHtml source={description}/>
-                        </div>
-                    )
-                })}
+                <div className = "grid-container">
+                    {spellList.map((val, key) => {
+                        let description = {html: `${val.description}`};
+                        return (
+                            <div key={key} className="spellBox">
+                                <div className="spellPicAndStats">
+                                    <div className="spellPic">
+                                        Hi!!!!!
+                                    </div>
+                                
+                                    <div className="spellStats">
+                                        <h1 style={{fontSize:"2rem"}}>{val.name}</h1>
+                                        <RenderHtml source={description}/>
+                                     </div>
+                                     
+                                </div>
+                                <p style={{fontSize:"1rem", textAlign:"left", }}>
+                                    The description will start here
+                                </p>
+                                
+                            </div>
+                        )
+                    })}
+                </div>
+                
              
             </div>
         </div>

@@ -24,7 +24,7 @@ const db = mysql.createConnection({
 });
 
 app.get('/getAllSpells', (req, res) => {
-    db.query("SELECT * FROM pathfinderapp.test_csv;", (err, result) => {
+    db.query("SELECT * FROM pathfinderapp.test;", (err, result) => {
         if (err){
             console.log("Something wrong with the test.csv!");
         }
