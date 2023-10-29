@@ -15,7 +15,7 @@ function Home(){
             <div className="spellBook">
                 <button onClick={() => {navigate("/tableOfContents")}}>
                     <img className="arcaneImage" src={arcaneImage} alt="Arcane"/>
-                    <img src={spellbookImage} alt="Arcane Spellbook"/>
+                    <img className="arcaneSpellbook" src={spellbookImage} alt="Arcane Spellbook"/>
                 </button>
             </div>
         </div>
