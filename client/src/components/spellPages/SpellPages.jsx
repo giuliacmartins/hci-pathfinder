@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./assets/spellPagesStyle.css"
 import "./assets/spellStyle.css"
@@ -10,11 +10,34 @@ function SpellPages(){
 
     const [spellList, setSpellList] = useState([]);
 
+
     const getSpells = () => {
         Axios.get("http://localhost:3001/getAllSpells").then((response) => {
             setSpellList(response.data);
         })
     }
+
+
+    const mapTraits = (traitsList) => {
+        return (traitsList.map((val, key) => {
+                return(
+                    <span><b key={key} className="spellTraits">{val}</b>&nbsp;&nbsp;&nbsp;</span>
+                )
+        }))
+    }
+    
+    const mapComponents = (spellComponentList) => {
+        return (spellComponentList.map((val, key) => {
+                return(
+                    <b key={key}><u>{val}</u>&nbsp;&nbsp;&nbsp;</b>
+                )
+        }))
+    }
+
+    useEffect(() => {
+        getSpells();
+        
+    }, [])
     
 
     return(
@@ -32,12 +55,13 @@ function SpellPages(){
             </button>
 
             <div className="spell">
-                <button onClick={getSpells}>
-                    Get Spells!
-                </button>
+
                 <div className = "grid-container">
                     {spellList.map((val, key) => {
                         let description = {html: `${val.description}`};
+
+                        let traitsArray = val.traits.split(`,`);
+                        let componentsArray = val.component_abbr.split(`,`);
                         return (
                             <div key={key} className="spellBox">
                                 <div className="spellPicAndStats">
@@ -46,14 +70,23 @@ function SpellPages(){
                                     </div>
                                 
                                     <div className="spellStats">
-                                        <h1 style={{fontSize:"2rem"}}>{val.name}</h1>
-                                        <RenderHtml source={description}/>
+                                        <div>
+                                            <h1 style={{fontSize:"2rem", textAlign:"left", marginBottom:"-0.5rem"}}>{val.spell_name}</h1>
+                                        </div>
+                                        <h2 style={{fontSize:"1.3rem"}}>{mapTraits(traitsArray)}</h2>
+                                        <div style={{textAlign:"left", fontSize:"1.2rem"}}>
+                                            <p>{mapComponents(componentsArray)}</p>
+                                            {val.range ? <p><b>Range: </b>{val.range}</p> : <></>}
+                                            {val.saving_throw ? <p><b>Saving Throw: </b>{val.saving_throw}</p>: <></>}
+                                            {val.targets ? <p><b>Targets: </b>{val.targets}</p> : <></>}
+                                            {val.duration ? <p><b>Duration: </b>{val.duration}</p> : <></>}
+                                        </div>
                                      </div>
                                      
                                 </div>
-                                <p style={{fontSize:"1rem", textAlign:"left", }}>
-                                    The description will start here
-                                </p>
+                                <div className = "description" >
+                                    <RenderHtml source={description}/>
+                                </div>
                                 
                             </div>
                         )

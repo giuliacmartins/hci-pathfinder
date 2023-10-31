@@ -25,9 +25,22 @@
 
 }
 
+.spellTraits{
+    border-radius: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 2px solid #000000;
+    /* text-align: center; */
+}
+
 .spellStats{
     display: flex;
     background-color: rgb(150, 218, 176);
-    align-items: center;
+    align-items: left;
     flex-direction: column;
+    text-align: left;
+}
+
+.description{
+    font-size: 10rem;
 }

@@ -20,16 +20,36 @@ const db = mysql.createConnection({
     user: 'root',
     host: 'localhost',
     password: 'Anyaiscool1!',
-    database: 'pathfinderapp',
+    database: 'pathfinder-schema',
 });
 
 app.get('/getAllSpells', (req, res) => {
-    db.query("SELECT * FROM pathfinderapp.test;", (err, result) => {
+    db.query("SELECT * FROM `pathfinder-schema`.spells;", (err, result) => {
         if (err){
-            console.log("Something wrong with the test.csv!");
+            console.log("Something wrong with the spells!");
         }
         else{
             res.send(result);
         }
+    });
+});
+
+app.get('/getSpellComponents', (req, res) => {
+    let spellName = req.body.spellName;
+    console.log(spellName);
+    db.query("SELECT component_name FROM `pathfinder-schema`.component_junction WHERE component_name LIKE ?",
+     `%${spellName}%`,
+    (err, result) => {
+        if (err){
+            console.log("Something wrong with searching in prisoners for medics!");
+        }
+        if (result.length > 0){
+            res.send(result);
+        }
+        else{
+            res.send({message: "No one matches..."});
+            
+        
+    }
     });
 });
