@@ -17,27 +17,37 @@ function SpellPages(){
     return(
         <div className="spellPage">
             <div className="navbar">
-                <img src={searchImage} alt="Search" onClick={() => {/* Navigate to search page */}}/>
-                <img className="spellCart" src={spellCartImage} alt="Spell Cart" onClick={() => {/* Navigate to cart page */}}/>
-                <img className="rightNav" src={homeBrownImage} alt="Home" onClick={() => navigate("/")}/>
-                <img className="rightNav" src={tocBtnImage} alt="TOC" onClick={() => navigate("/tableofContents")}/>
-                <img className="rightNav" src={damageBtnImage} alt="Damage" onClick={() => {/* Navigate to search page */}}/>
-                <img className="rightNav" src={buffBtnImage} alt="Buff" onClick={() => {/* Navigate to search page */}}/>
-                <img className="rightNav" src={dropDownBtnImage} alt="Drop Down" onClick={() => {/* Navigate to search page */}}/>
+                <div className="leftIcons">
+                    <img className="search" src={searchImage} alt="Search" onClick={() => {/* Navigate to search page */}}/>
+                    <img className="spellCart" src={spellCartImage} alt="Spell Cart" onClick={() => {/* Navigate to cart page */}}/>
+                </div>
+                <div className="arcaneHeader">
+                    <img className="arcaneLevelHeader" src={arcanHeaderImage} alt="Arcane 1st Level"/>
+                </div>
+                <div className="rightIcons">
+                    <img className="rightNav" src={homeBrownImage} alt="Home" onClick={() => navigate("/")}/>
+                    <img className="rightNav" src={tocBtnImage} alt="TOC" onClick={() => navigate("/tableofContents")}/>
+                    <img className="rightNav" src={damageBtnImage} alt="Damage" onClick={() => {/* Navigate to search page */}}/>
+                    <img className="rightNav" src={buffBtnImage} alt="Buff" onClick={() => {/* Navigate to search page */}}/>
+                    <img className="rightNav" src={dropDownBtnImage} alt="Drop Down" onClick={() => {/* Navigate to search page */}}/>
+                </div>
             </div>
-
+            {/* <div className="sections">
+                <div className="column half">
+                    <div className="arcaneText">
+                        // add the database here :)
+                    </div>
+                </div>
+                <div className="column half">
+                    <div className="arcaneText2">
+                        // add the database here :)
+                    </div>
+                </div>
+            </div> */}
             <div className="pagination">
                 <img src={backArrowImage} alt="Previous" onClick={() => navigate("/")}/>
                 <img src={forwardArrowImage} alt="Next" onClick={() => navigate("/tableofContents2")}/>
             </div>
-            
-            {/* <button onClick={() => {navigate("/")}}>
-                Go to Home!
-            </button>
-
-            <button onClick={() => {navigate("/tableOfContents")}}>
-                Go to Table of Contents!
-            </button> */}
         </div>
     )
 }

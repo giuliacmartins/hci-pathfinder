@@ -19,29 +19,107 @@ body, html {
 
 .navbar {
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     padding: 10px 0;
+    margin-top: 0;
+}
+
+.navbar .leftIcons {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    align-items: center; /* Vertically center the items */
+    gap: 10px;
+}
+
+.navbar .rightIcons {
+    display: flex;
+    align-items: center;
 }
 
 .navbar img.rightNav {
-    margin-left: auto; 
+    margin-right: 7px; 
+    cursor: pointer;
+    max-width: 37%;
+    max-height: auto;
+}
+
+.navbar img.search {
     cursor: pointer;
 }
 
-.navbar img {
+.navbar img.rightNav {
     cursor: pointer;
-    max-width: 50%;
-    max-height: 50%;
 }
 
 .navbar img.spellCart {
-    margin-left: 15px;
-    margin-bottom: 10px;
+    margin-top: 10px;
     cursor: pointer;
 }
 
-.navbar img:hover {
+.navbar img.spellCart:hover {
     transform: scale(1.1); 
     transition: transform 0.3s ease-in-out;
 }
+
+.navbar img.search:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar img.rightNav:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.arcaneHeader, .rightIcons {
+    margin-top: -150px;  /* Adjust this value as per your requirements */
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.pagination img {
+    max-width: 35px;
+    cursor: pointer;
+}
+
+.pagination img:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease-in-out;
+}
+
+/* .column.half {
+    width: 50%;
+} */
+
+.arcaneHeader {
+    display: flex;
+    align-items: center;
+    margin: 0 auto; 
+}
+
+
+.arcaneLevelHeader {
+    display: flex;
+    justify-content: flex-start; /* Align the image to the start (left) */
+    width: 100%;
+}
+
+.arcaneLevelHeader img {
+    max-width: 85%; /* Increase the width to make it a bit bigger */
+    margin-left: 10px; /* Add some margin to the left */
+    margin-right: 20px;
+}
+
+/* .half {
+    flex-basis: 100%;  
+} */
