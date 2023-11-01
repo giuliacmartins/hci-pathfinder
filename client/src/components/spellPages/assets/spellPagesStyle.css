@@ -101,24 +101,23 @@ body, html {
     width: 50%;
 } */
 
-.arcaneHeader {
+/* .arcaneHeader {
     display: flex;
     align-items: center;
     margin: 0 auto; 
-}
+} */
 
-
-.arcaneLevelHeader {
+/* .arcaneLevelHeader {
     display: flex;
     justify-content: flex-start;
     width: 100%;
-}
+} */
 
-.arcaneLevelHeader img {
+/* .arcaneLevelHeader img {
     max-width: 85%; 
     margin-left: 10px;
     margin-right: 20px;
-}
+} */
 
 /* .half {
     flex-basis: 100%;  

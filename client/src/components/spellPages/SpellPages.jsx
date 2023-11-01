@@ -21,9 +21,9 @@ function SpellPages(){
                     <img className="search" src={searchImage} alt="Search" onClick={() => {/* Navigate to search page */}}/>
                     <img className="spellCart" src={spellCartImage} alt="Spell Cart" onClick={() => {/* Navigate to cart page */}}/>
                 </div>
-                <div className="arcaneHeader">
+                {/* <div className="arcaneHeader">
                     <img className="arcaneLevelHeader" src={arcanHeaderImage} alt="Arcane 1st Level"/>
-                </div>
+                </div> */}
                 <div className="rightIcons">
                     <img className="rightNav" src={homeBrownImage} alt="Home" onClick={() => navigate("/")}/>
                     <img className="rightNav" src={tocBtnImage} alt="TOC" onClick={() => navigate("/tableofContents")}/>
