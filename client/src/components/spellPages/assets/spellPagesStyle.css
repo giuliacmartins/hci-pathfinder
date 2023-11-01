@@ -30,7 +30,7 @@ body, html {
     display: flex;
     flex-direction: column;
     /* align-items: flex-start; */
-    align-items: center; /* Vertically center the items */
+    align-items: center; 
     gap: 10px;
 }
 
@@ -75,7 +75,7 @@ body, html {
 }
 
 .arcaneHeader, .rightIcons {
-    margin-top: -150px;  /* Adjust this value as per your requirements */
+    margin-top: -150px;
 }
 
 .pagination {
@@ -110,13 +110,13 @@ body, html {
 
 .arcaneLevelHeader {
     display: flex;
-    justify-content: flex-start; /* Align the image to the start (left) */
+    justify-content: flex-start;
     width: 100%;
 }
 
 .arcaneLevelHeader img {
-    max-width: 85%; /* Increase the width to make it a bit bigger */
-    margin-left: 10px; /* Add some margin to the left */
+    max-width: 85%; 
+    margin-left: 10px;
     margin-right: 20px;
 }
 
