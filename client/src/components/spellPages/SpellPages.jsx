@@ -5,7 +5,7 @@ import spellCartImage from "./assets/photos/spellcart.png";
 import searchImage from "./assets/photos/search.png";
 import forwardArrowImage from "./assets/photos/forwardArrow.png";
 import backArrowImage from "./assets/photos/backArrow.png";
-import arcanHeaderImage from "./assets/photos/arcane1LevelSpellsHeader.png";
+// import arcanHeaderImage from "./assets/photos/arcane1LevelSpellsHeader.png";
 import buffBtnImage from "./assets/photos/buffBtn.png";
 import damageBtnImage from "./assets/photos/damageBtn.png";
 import tocBtnImage from "./assets/photos/tocBtn.png";
