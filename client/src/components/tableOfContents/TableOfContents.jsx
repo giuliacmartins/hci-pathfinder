@@ -24,7 +24,7 @@ function TableOfContents(){
                 <img className="homeImage" src={homeBlackImage} alt="Home" onClick={() => navigate("/")}/>
             </div>
             <div className="tocTitle">
-                <div className="column hlaf">
+                <div className="column half">
                     <img className="toc" src={tableOfContentsTitle} alt="Table of Contents"/>
                     <img className="leaf" src={leafImage} alt="Leaf"/>
 
