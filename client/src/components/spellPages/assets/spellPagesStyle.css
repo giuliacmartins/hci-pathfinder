@@ -1,17 +1,132 @@
-.spellPage{
-    position:fixed;
-    padding:0;
-    margin:0;
-    background-color: rgb(241, 213, 133);
-    top:0;
-    left:0;
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.spellish{
+    position:relative;
+    margin-top:-10rem;
+    margin-left: 25rem;
     width: 100%;
     height: 100%;
+}
 
+.spellPage{
+    height: 100vh; 
+    background-image: url('./photos/pagesBackground.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 0;
+}
+
+.navbar .leftIcons {
     display: flex;
     flex-direction: column;
-    overflow-x: auto;
-    overflow-y: auto;
-    /* color: #fff; */
+    /* align-items: flex-start; */
+    align-items: center; 
+    gap: 10px;
 }
+
+.navbar .rightIcons {
+    display: flex;
+    align-items: center;
+}
+
+.navbar img.rightNav {
+    margin-right: 7px; 
+    cursor: pointer;
+    max-width: 37%;
+    max-height: auto;
+}
+
+.navbar img.search {
+    cursor: pointer;
+}
+
+.navbar img.rightNav {
+    cursor: pointer;
+}
+
+.navbar img.spellCart {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.navbar img.spellCart:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar img.search:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar img.rightNav:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.arcaneHeader, .rightIcons {
+    margin-top: -150px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.pagination img {
+    max-width: 35px;
+    cursor: pointer;
+}
+
+.pagination img:hover {
+    transform: scale(1.1); 
+    transition: transform 0.3s ease-in-out;
+}
+
+/* .column.half {
+    width: 50%;
+} */
+
+/* .arcaneHeader {
+    display: flex;
+    align-items: center;
+    margin: 0 auto; 
+} */
+
+/* .arcaneLevelHeader {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+} */
+
+/* .arcaneLevelHeader img {
+    max-width: 85%; 
+    margin-left: 10px;
+    margin-right: 20px;
+} */
+
+/* .half {
+    flex-basis: 100%;  
+} */
