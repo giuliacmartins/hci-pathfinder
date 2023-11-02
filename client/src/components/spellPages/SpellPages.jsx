@@ -4,11 +4,21 @@ import "./assets/spellPagesStyle.css"
 import "./assets/spellStyle.css"
 import Axios from "axios";
 import RenderHtml from 'react-native-render-html'
+import moreInfoIcon from "./assets/images/more-info-icon.png"
 
 function SpellPages(){
     let navigate = useNavigate();
 
     const [spellList, setSpellList] = useState([]);
+    const [active, setActive] = useState(true);
+
+    function closeInfo() {
+        setActive(true);
+    }
+    
+    function openInfo(){
+        setActive(false);
+    }
 
 
     const getSpells = () => {
@@ -34,6 +44,29 @@ function SpellPages(){
         }))
     }
 
+    const mapTraditions = (spellTraditionsList) => {
+        let temp = spellTraditionsList[spellTraditionsList.length - 1];
+        return (spellTraditionsList.map((val, key) => {
+                return(
+                    val !== temp ? <span style={{fontSize: "1rem"}}>{val}, </span> : <span style={{fontSize: "1rem"}}>{val}</span> 
+                )
+           
+        }))
+    }
+
+
+    const showMoreInfo = (traditionsArray, source) => {
+        return(
+            <div className="spellStats">
+                <button className="closeButton" onClick={closeInfo}>close</button>
+                <p><b>Traditions:</b> {mapTraditions(traditionsArray)}</p>
+                <p><b>Source:</b> {source}</p>
+
+                
+            </div>
+        )
+    }
+
     useEffect(() => {
         getSpells();
         
@@ -45,6 +78,7 @@ function SpellPages(){
             <div>
                 Hello! This is the Spell Pages!
             </div>
+            
             
             <button onClick={() => {navigate("/")}}>
                 Go to Home!
@@ -62,6 +96,7 @@ function SpellPages(){
 
                         let traitsArray = val.traits.split(`,`);
                         let componentsArray = val.component_abbr.split(`,`);
+                        let traditionsArray = val.traditions.split(`,`);
                         return (
                             <div key={key} className="spellBox">
                                 <div className="spellPicAndStats">
@@ -86,7 +121,15 @@ function SpellPages(){
                                 </div>
                                 <div className = "description" >
                                     <RenderHtml source={description}/>
+                                    
                                 </div>
+                                <div>
+                                <button className="moreInfoIcons" onClick={openInfo}><img src={moreInfoIcon} alt="More Information"></img></button>
+                                        {active ? "" : showMoreInfo(traditionsArray, val.source)}
+                                        {/* <button onClick={closeInfo}>close</button>
+                                        <button className="moreInfoIcons" onClick={openInfo}><img src={moreInfoIcon} alt="More Information"></img></button>
+                                        <div style={{marginTop: "-10rem"}}>{active ? "" : mapTraditions(traditionsArray)}</div> */}
+                                    </div>
                                 
                             </div>
                         )

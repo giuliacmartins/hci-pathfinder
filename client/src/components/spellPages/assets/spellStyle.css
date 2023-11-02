@@ -2,12 +2,13 @@
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 8rem;
-    row-gap: 2rem;
+    row-gap: 10rem;
+    padding-bottom: 1rem;
 }
 
 .spellBox{
     display: flex;
-    background-color: rgb(150, 150, 218);
+    /* background-color: rgb(150, 150, 218); */
     width:42rem;
     align-items: left;
     flex-direction: column;
@@ -18,7 +19,7 @@
 
 .spellPicAndStats{
     display: flex;
-    background-color: rgb(218, 160, 150);
+    /* background-color: rgb(218, 160, 150); */
     align-items: center;
     flex-direction: row;
     column-gap: 2rem;
@@ -35,7 +36,7 @@
 
 .spellStats{
     display: flex;
-    background-color: rgb(150, 218, 176);
+    /* background-color: rgb(150, 218, 176); */
     align-items: left;
     flex-direction: column;
     text-align: left;
@@ -43,4 +44,25 @@
 
 .description{
     font-size: 10rem;
+}
+
+.moreInfoIcons{
+    display: flex;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    align-self: left;
+}
+
+.closeButton{
+    border-radius: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 1rem;
+    width: 5rem;
+    border: 2px solid #000000;
+    text-align: center;
+    cursor: pointer;
+    background: none;
 }
