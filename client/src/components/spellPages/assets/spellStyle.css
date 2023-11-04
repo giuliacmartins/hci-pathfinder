@@ -53,7 +53,7 @@
 .description{
     font-size: 10rem;
     padding-right: 1rem; 
-    max-width: 100%; /* Ensure it doesn't exceed its container */
+    max-width: 100%; 
     overflow: auto;
 }
 
@@ -67,8 +67,8 @@
 }
 
 .moreInfoIcons img, .pagination img {
-    width: 20px; /* Decrease the size */
-    margin: 0 5px; /* Add space around the buttons */
+    width: 20px; 
+    margin: 0 5px; 
 }
 
 .closeButton{
