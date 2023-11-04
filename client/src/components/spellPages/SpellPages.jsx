@@ -14,7 +14,7 @@ import homeBrownImage from "./assets/photos/homeBrown.png";
 import "./assets/spellStyle.css"
 import Axios from "axios";
 import RenderHtml from 'react-native-render-html'
-import moreInfoIcon from "./assets/images/more-info-icon.png"
+// import moreInfoIcon from "./assets/images/more-info-icon.png"
 
 function SpellPages(){
     let navigate = useNavigate();
@@ -136,7 +136,7 @@ function SpellPages(){
                             <div key={key} className="spellBox">
                                 <div className="spellPicAndStats">
                                     <div className="spellPic">
-                                        Hi!!!!!
+                                        {val.img == null ? <>Hi!</> : <img src={val.img} alt="Spell"></img>}
                                     </div>
                                 
                                     <div className="spellStats">
@@ -159,7 +159,7 @@ function SpellPages(){
                                     
                                 </div>
                                 <div>
-                                <button className="moreInfoIcons" onClick={openInfo}><img src={moreInfoIcon} alt="More Information"></img></button>
+                                <button className="moreInfoIcons" onClick={openInfo}><img src={"images/more-info-icon.png"} alt="More Information"></img></button>
                                         {active ? "" : showMoreInfo(traditionsArray, val.source)}
                                         {/* <button onClick={closeInfo}>close</button>
                                         <button className="moreInfoIcons" onClick={openInfo}><img src={moreInfoIcon} alt="More Information"></img></button>
