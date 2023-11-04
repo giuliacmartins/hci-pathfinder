@@ -123,9 +123,15 @@ function SpellPages(){
                     {spellList.map((val, key) => {
                         let description = {html: `${val.description}`};
 
-                        let traitsArray = val.traits.split(`,`);
-                        let componentsArray = val.component_abbr.split(`,`);
-                        let traditionsArray = val.traditions.split(`,`);
+                        let traitsArray;
+                        val.traits == null ? val.traits = null : traitsArray = val.traits.split(`,`);
+
+                        let componentsArray;
+                        val.component_abbr == null ? val.component_abbr = null : componentsArray = val.component_abbr.split(`,`);
+                        
+                        let traditionsArray;
+                        val.traditions == null ? val.traditions = null : traditionsArray = val.traditions.split(`,`);
+
                         return (
                             <div key={key} className="spellBox">
                                 <div className="spellPicAndStats">
@@ -137,9 +143,9 @@ function SpellPages(){
                                         <div>
                                             <h1 style={{fontSize:"2rem", textAlign:"left", marginBottom:"-0.5rem"}}>{val.spell_name}</h1>
                                         </div>
-                                        <h2 style={{fontSize:"1.3rem"}}>{mapTraits(traitsArray)}</h2>
+                                        <h2 style={{fontSize:"1.3rem"}}>{val.traits == null ? <></> : mapTraits(traitsArray)}</h2>
                                         <div style={{textAlign:"left", fontSize:"1.2rem"}}>
-                                            <p>{mapComponents(componentsArray)}</p>
+                                            {val.component_abbr == null ? <></> : <p>{mapComponents(componentsArray)}</p>}
                                             {val.range ? <p><b>Range: </b>{val.range}</p> : <></>}
                                             {val.saving_throw ? <p><b>Saving Throw: </b>{val.saving_throw}</p>: <></>}
                                             {val.targets ? <p><b>Targets: </b>{val.targets}</p> : <></>}
