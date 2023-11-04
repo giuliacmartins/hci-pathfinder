@@ -1,20 +1,28 @@
 .grid-container{
     display: grid;
     grid-template-columns: auto auto;
-    column-gap: 8rem;
-    row-gap: 10rem;
+    gap: 2.5rem; 
+    padding: 1rem;
+    /* column-gap: 8rem;
+    row-gap: 10rem; */
     padding-bottom: 1rem;
+    padding-left: 5%;
+    padding-right: 0;
+    max-width: 100%;
 }
 
 .spellBox{
     display: flex;
     /* background-color: rgb(150, 150, 218); */
-    width:42rem;
+    /* width: 42rem; */
+    max-width: 100%; 
     align-items: left;
     flex-direction: column;
     column-gap: 2rem;
-
-    
+    max-width: 100%; 
+    overflow-wrap: break-word; 
+    padding: 1rem;
+    overflow: hidden; 
 }
 
 .spellPicAndStats{
@@ -23,7 +31,6 @@
     align-items: center;
     flex-direction: row;
     column-gap: 2rem;
-
 }
 
 .spellTraits{
@@ -40,10 +47,14 @@
     align-items: left;
     flex-direction: column;
     text-align: left;
+    padding-right: 1rem; 
 }
 
 .description{
     font-size: 10rem;
+    padding-right: 1rem; 
+    max-width: 100%; /* Ensure it doesn't exceed its container */
+    overflow: auto;
 }
 
 .moreInfoIcons{
@@ -53,6 +64,11 @@
     padding: 0;
     cursor: pointer;
     align-self: left;
+}
+
+.moreInfoIcons img, .pagination img {
+    width: 20px; /* Decrease the size */
+    margin: 0 5px; /* Add space around the buttons */
 }
 
 .closeButton{

@@ -5,16 +5,19 @@ body, html {
 }
 
 .spellPage{
-    height: 100vh; 
+    max-width: 100%;
+    margin: 0 auto;
+    height: auto; 
+    min-height: 100vh; 
     background-image: url('./photos/pagesBackground.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 20px;
+    background-size: auto; 
+    background-position: center top; 
+    background-repeat: repeat-y; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
 }
 
 .navbar {
@@ -32,6 +35,12 @@ body, html {
     /* align-items: flex-start; */
     align-items: center; 
     gap: 10px;
+}
+
+.navbar .leftIcons img {
+    width: 20px; 
+    margin-top: 5px; 
+    margin-right: 10px;
 }
 
 .navbar .rightIcons {
@@ -75,7 +84,7 @@ body, html {
 }
 
 .arcaneHeader, .rightIcons {
-    margin-top: -150px;
+    margin-top: 100px;
 }
 
 .pagination {
