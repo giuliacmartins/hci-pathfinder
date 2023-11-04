@@ -175,8 +175,8 @@ function SpellPages(){
             </div>
             </div>
             <div className="pagination">
-                <img src={backArrowImage} alt="Previous" onClick={() => navigate("/")}/>
-                <img src={forwardArrowImage} alt="Next" onClick={() => navigate("/tableofContents2")}/>
+                <img src={backArrowImage} alt="Previous" onClick={() => navigate("/tableOfContents")}/>
+                <img src={forwardArrowImage} alt="Next" onClick={() => navigate("/")}/>
             </div>
         </div>
     )

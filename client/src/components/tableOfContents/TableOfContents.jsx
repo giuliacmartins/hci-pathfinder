@@ -40,7 +40,7 @@ function TableOfContents(){
 
                         <h2><u>Arcane 1st-Level Spells</u></h2>
                         <ul> 
-                            <li>Damage<img className="smallImg" src={damageImage} alt="Damage"/></li>
+                            <li><button onClick={() => navigate("/spellPages")}>Damage</button><img className="smallImg" src={damageImage} alt="Damage"/></li>
                             <li>Buff<img className="smallImg2" src={buffImage} alt="Buff"/></li>
                             <li>Debuff<img className="smallImg2" src={debuffImage} alt="Debuff"/></li>
                             <li>Combat Utility<img className="smallImg" src={combatUtilityImage} alt="Combat"/></li>
@@ -58,30 +58,12 @@ function TableOfContents(){
                             <li>Combat Utility<img className="smallImg" src={combatUtilityImage} alt="Combat"/></li>
                             <li>Out of Combat Utility<img className="smallImg" src={outOfCombatUtilityImage} alt="Out of Combat"/></li>
                         </ul>
-
-                        <h2><u>Arcane 3rd-Level Spells</u></h2>
-                        <ul> 
-                            <li>Damage<img className="smallImg" src={damageImage} alt="Damage"/></li>
-                            <li>Buff<img className="smallImg2" src={buffImage} alt="Buff"/></li>
-                            <li>Debuff<img className="smallImg2" src={debuffImage} alt="Debuff"/></li>
-                            <li>Combat Utility<img className="smallImg" src={combatUtilityImage} alt="Combat"/></li>
-                            <li>Out of Combat Utility<img className="smallImg" src={outOfCombatUtilityImage} alt="Out of Combat"/></li>
-                        </ul>
-
-                        <h2><u>Arcane 4th-Level Spells</u></h2>
-                        <ul> 
-                            <li>Damage<img className="smallImg" src={damageImage} alt="Damage"/></li>
-                            <li>Buff<img className="smallImg2" src={buffImage} alt="Buff"/></li>
-                            <li>Debuff<img className="smallImg2" src={debuffImage} alt="Debuff"/></li>
-                            <li>Combat Utility<img className="smallImg" src={combatUtilityImage} alt="Combat"/></li>
-                            <li>Out of Combat Utility<img className="smallImg" src={outOfCombatUtilityImage} alt="Out of Combat"/></li>
-                        </ul>
                     </div>
                 </div>
             </div>
             <div className="pagination">
                 <img src={backArrowImage} alt="Previous" onClick={() => navigate("/")}/>
-                <img src={forwardArrowImage} alt="Next" onClick={() => navigate("/tableofContents2")}/>
+                <img src={forwardArrowImage} alt="Next" onClick={() => navigate("/spellPages")}/>
             </div>
         </div>
     )
