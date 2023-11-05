@@ -1,9 +1,9 @@
 import React from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./assets/tableOfContentsStyle.css"
 import tableOfContentsTitle from "./assets/photos/toc1.png";
-import spellCartImage from "./assets/photos/spellcart.png";
-import searchImage from "./assets/photos/search.png";
+import searchImage from "../spellPages/assets/photos/search.png";
 import outOfCombatUtilityImage from "./assets/photos/outOfCombatUtility.png";
 import leafImage from "./assets/photos/leaf.png";
 import homeBlackImage from "./assets/photos/homeBlack.png";
@@ -15,9 +15,27 @@ import buffImage from "./assets/photos/buff.png";
 import backArrowImage from "./assets/photos/backArrow.png";
 import { useDispatch } from "react-redux";
 import { choosePage } from "../../features/pageSlice";
+import Axios from "axios";
+import "../spellPages/assets/searchBarStyle.css";
+import "../spellPages/assets/spellPagesStyle.css";
+import "../spellPages/assets/spellStyle.css"
 
 function TableOfContents(){
     let navigate = useNavigate();
+
+    const [value, setValue] = useState('');
+    const [searchSpellList, setSearchSpellList] = useState([]);
+    const [showSearch, setShowSearch] = useState(true);
+
+    function openSearch(){
+        setShowSearch(false);
+    }
+    function closeSearch(){
+        setShowSearch(true);
+    }
+    const onChange = (event) => {
+        setValue(event.target.value);
+    }
 
     const dispatch = useDispatch();
 
@@ -30,13 +48,58 @@ function TableOfContents(){
         }))
     }
 
+    const handleSearch = (e, spellClass, spellType) => {
+        e.preventDefault();
+
+        dispatch(choosePage({
+        className: spellClass,
+        typeName: spellType,  
+        }))
+    }
+
+    const getSpellNames = (searchTerm) => {
+        Axios.post("http://localhost:3001/getSpellNames", {
+            spellName: searchTerm
+        }).then((response) => {
+            setSearchSpellList(response.data);
+            // console.log(spellList)
+        })
+    }
+
+    function SearchBar(){
+        return(
+            <div className="searchBar">
+            {/* onChange={event => {setName(event.target.value);}} */}
+            <div className="searchTop">
+                <input className="searchInput" type="text"  placeholder = "Spell Name..."
+                    onChange={onChange}
+                >
+                    </input> 
+                    
+                    <button onClick={()=>getSpellNames(value)}>Search</button>
+            </div>
+            <div className="dropDown">
+                {searchSpellList.slice(0,8).map((item) => (
+                    <button className="dropDownRow" onClick={(e) => {
+                        handleSearch(e, item.spell_class, item.spell_type)
+                        navigate("/spellPages")
+                    }}>{item.spell_name} </button>
+                    
+                ))}
+                {/* <button className="closeBtn" onClick={closeSearch}>Close</button> */}
+            </div>
+            <button className="closeBtn" onClick={closeSearch}>Close</button>
+
+        </div>
+        )
+    }
+
 
     return(
         <div className="tableOfContentsPage">
             <div className="navbar">
-                <img src={searchImage} alt="Search" onClick={() => {/* Navigate to search page */}}/>
-                <img className="spellCart" src={spellCartImage} alt="Spell Cart" onClick={() => {/* Navigate to cart page */}}/>
-                <img className="homeImage" src={homeBlackImage} alt="Home" onClick={() => navigate("/")}/>
+            {showSearch ? <img className="search" src={searchImage} alt="Search" onClick={openSearch}/>: SearchBar()}
+            <img className="homeImage" src={homeBlackImage} alt="Home" onClick={() => navigate("/")}/>
             </div>
             <div className="tocTitle">
                 <div className="column half">

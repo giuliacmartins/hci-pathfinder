@@ -54,3 +54,24 @@ app.post('/getSpellComponents', (req, res) => {
     }
     });
 });
+
+app.post('/getSpellNames', (req, res) => {
+    const spellName = req.body.spellName;
+    
+    db.query("SELECT * FROM `pathfinder-schema`.spells WHERE LOWER(spell_name) LIKE ?",
+    `%${spellName}%`,
+    (err, result) => {
+        if (err){
+            console.log("Something wrong with searching in prisoners for medics!");
+        }
+        if (result.length > 0){
+            res.send(result);
+        }
+        else{
+            res.send({message: "No one matches..."});
+            console.log("oh no!!");
+            
+        
+    }
+    });
+});

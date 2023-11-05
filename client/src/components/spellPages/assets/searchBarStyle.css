@@ -1,0 +1,52 @@
+.searchBar{
+    display: flex;
+    flex-direction: column;
+    height: 20rem;
+    width: 20rem;
+    background-color: black;
+    color: white;
+
+    padding-top: 1rem;
+}
+
+.dropDown{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.dropDownRow{
+    padding: 0;
+    background: none;
+    color: white;
+    border: 2px solid #ffffff;
+    border-radius: 10rem;
+    width: 10rem;
+}
+
+.dropDownRow:hover {
+    background: rgb(135, 235, 135);
+    transition: all 0.2s ease-in-out;
+    color: #000000;
+    vertical-align: middle;
+}
+
+.closeBtn{
+    margin-left: 16.5rem;
+    margin-top: 18rem;
+    position:absolute;
+    background: none;
+    color: white;
+    border: 2px solid #ffffff;
+    border-radius: 10rem;
+    width: 3rem;
+}
+
+.closeBtn:hover {
+    background: rgb(235, 73, 73);
+    transition: all 0.2s ease-in-out;
+    color: #ffffff;
+    vertical-align: middle;
+}

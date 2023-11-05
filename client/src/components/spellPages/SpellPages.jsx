@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./assets/spellPagesStyle.css"
-import spellCartImage from "./assets/photos/spellcart.png";
+// import spellCartImage from "./assets/photos/spellcart.png";
 import searchImage from "./assets/photos/search.png";
 import forwardArrowImage from "./assets/photos/forwardArrow.png";
 import backArrowImage from "./assets/photos/backArrow.png";
@@ -20,6 +20,8 @@ import RenderHtml from 'react-native-render-html'
 import { useDispatch, useSelector } from "react-redux";
 import { noPage, selectPage } from "../../features/pageSlice";
 import { choosePage } from "../../features/pageSlice";
+// import SearchBar from "./search";
+import "./assets/searchBarStyle.css";
 
 function SpellPages(){
     let navigate = useNavigate();
@@ -28,6 +30,16 @@ function SpellPages(){
 
     const [spellList, setSpellList] = useState([]);
     const [active, setActive] = useState(true);
+    const [value, setValue] = useState('');
+    const [searchSpellList, setSearchSpellList] = useState([]);
+    const [showSearch, setShowSearch] = useState(true);
+
+    
+
+    useEffect(() => {
+        getSpellComponents();
+        
+    })
 
     function closeInfo() {
         setActive(true);
@@ -35,6 +47,23 @@ function SpellPages(){
     
     function openInfo(){
         setActive(false);
+    }
+
+    // function closeSearch() {
+    //     setShowSearch(true);
+    // }
+    
+    function openSearch(){
+        setShowSearch(false);
+    }
+    function closeSearch(){
+        setShowSearch(true);
+    }
+
+    /* HERE!! */
+
+    const onChange = (event) => {
+        setValue(event.target.value);
     }
 
 
@@ -46,6 +75,68 @@ function SpellPages(){
         }).then((response) => {
             setSpellList(response.data);
         })
+    }
+
+    const getSpellNames = (searchTerm) => {
+        Axios.post("http://localhost:3001/getSpellNames", {
+            spellName: searchTerm
+        }).then((response) => {
+            setSearchSpellList(response.data);
+            // console.log(spellList)
+        })
+    }
+
+    const dispatch = useDispatch();
+    const handleTOC = (e) => {
+        e.preventDefault();
+
+        dispatch(noPage());
+    }
+
+    const navigationBarClick = (e, spellClass, spellType) => {
+        e.preventDefault();
+
+        dispatch(choosePage({
+        className: spellClass,
+        typeName: spellType,  
+        }))
+    }
+
+    const handleClick = (e, spellClass, spellType) => {
+        e.preventDefault();
+
+        dispatch(choosePage({
+        className: spellClass,
+        typeName: spellType,  
+        }))
+    }
+
+    function SearchBar(){
+        return(
+            <div className="searchBar">
+            {/* onChange={event => {setName(event.target.value);}} */}
+            <div className="searchTop">
+                <input className="searchInput" type="text"  placeholder = "Spell Name..."
+                    onChange={onChange}
+                >
+                    </input> 
+                    
+                    <button onClick={()=>getSpellNames(value)}>Search</button>
+            </div>
+            <div className="dropDown">
+                {searchSpellList.slice(0,8).map((item) => (
+                    <button className="dropDownRow" onClick={(e) => {
+                        handleClick(e, item.spell_class, item.spell_type)
+                        navigate("/spellPages")
+                    }}>{item.spell_name} </button>
+                    
+                ))}
+                {/* <button className="closeBtn" onClick={closeSearch}>Close</button> */}
+            </div>
+            <button className="closeBtn" onClick={closeSearch}>Close</button>
+
+        </div>
+        )
     }
 
 
@@ -90,34 +181,27 @@ function SpellPages(){
 
 
 
-    const dispatch = useDispatch();
-    const handleTOC = (e) => {
-        e.preventDefault();
+    
 
-        dispatch(noPage());
-    }
-
-    const navigationBarClick = (e, spellClass, spellType) => {
-        e.preventDefault();
-
-        dispatch(choosePage({
-        className: spellClass,
-        typeName: spellType,  
-        }))
-    }
-
-    useEffect(() => {
-        getSpellComponents();
-        
-    })
+    
     
 
     return(
         <div className="spellPage">
             <div className="navbar">
                 <div className="leftIcons">
-                    <img className="search" src={searchImage} alt="Search" onClick={() => {/* Navigate to search page */}}/>
-                    <img className="spellCart" src={spellCartImage} alt="Spell Cart" onClick={() => {/* Navigate to cart page */}}/>
+                    {/*openSearch()  showSearch ? "" :*/}
+
+                    {/* <button className="moreInfoIcons" onClick={openInfo}><img src={"images/more-info-icon.png"} alt="More Information"></img></button>
+                    {active ? "" : showMoreInfo(traditionsArray, val.source)} */}
+
+
+
+                    {showSearch ? <img className="search" src={searchImage} alt="Search" onClick={openSearch}/>: SearchBar()}
+                </div>
+                <div>
+                
+                {/* {showSearch ? "" : SearchBar()} */}
                 </div>
                 {/* <div className="arcaneHeader">
                     <img className="arcaneLevelHeader" src={arcanHeaderImage} alt="Arcane 1st Level"/>
@@ -164,7 +248,7 @@ function SpellPages(){
             
             
             <div className="spellish">
-                {pageType.className === "Arcane Cantrips" ? <h1>{pageType.className} of {pageType.typeName} Type</h1> : <h1>{pageType.className}s of {pageType.typeName} Type</h1>}
+                {pageType.className === "Arcane Cantrips" ? <h1 style={{marginRight: "43rem", color: "brown"}}><b><u>{pageType.className} of {pageType.typeName} Type</u></b></h1> : <h1 style={{marginRight: "43rem", color: "brown"}}><b><u>{pageType.className}s of {pageType.typeName} Type</u></b></h1>}
                 
 
             <div className="spell">

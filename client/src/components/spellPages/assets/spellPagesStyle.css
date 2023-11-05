@@ -4,25 +4,20 @@ body, html {
     height: 100%;
 }
 
-.spellish{
-    position:relative;
-    margin-top:-10rem;
-    margin-left: 25rem;
-    width: 100%;
-    height: 100%;
-}
-
 .spellPage{
-    height: 100vh; 
+    max-width: 100%;
+    margin: 0 auto;
+    height: auto; 
+    min-height: 100vh; 
     background-image: url('./photos/pagesBackground.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 20px;
+    background-size: auto; 
+    background-position: center top; 
+    background-repeat: repeat-y; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
 }
 
 .navbar {
@@ -30,27 +25,32 @@ body, html {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 10px 0;
+    /* padding: 10px 0; */
     margin-top: 0;
 }
 
 .navbar .leftIcons {
     display: flex;
+    margin-top: 23rem;
+    margin-left: -1.2rem;
+    position: absolute;
     flex-direction: column;
     /* align-items: flex-start; */
-    align-items: center; 
+    align-items: left; 
     gap: 10px;
+}
+
+.navbar .leftIcons img {
+    width: 2rem; 
+    margin-top: -8rem; 
+    margin-right: 10px;
 }
 
 .navbar .rightIcons {
     display: flex;
     align-items: center;
-}
-
-.navbar .downIcons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-left: 20rem;
+    margin-top: -1rem;
 }
 
 .navbar img.rightNav {
@@ -60,7 +60,6 @@ body, html {
     max-height: auto;
 }
 
-
 .navbar img.search {
     cursor: pointer;
 }
@@ -68,7 +67,6 @@ body, html {
 .navbar img.rightNav {
     cursor: pointer;
 }
-
 
 .navbar img.spellCart {
     margin-top: 10px;
@@ -90,10 +88,8 @@ body, html {
     transition: transform 0.3s ease-in-out;
 }
 
-
-
 .arcaneHeader, .rightIcons {
-    margin-top: -150px;
+    margin-top: 100px;
 }
 
 .pagination {
@@ -114,6 +110,7 @@ body, html {
     transform: scale(1.1); 
     transition: transform 0.3s ease-in-out;
 }
+
 
 /* .column.half {
     width: 50%;
