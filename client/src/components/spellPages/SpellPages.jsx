@@ -9,14 +9,17 @@ import backArrowImage from "./assets/photos/backArrow.png";
 import buffBtnImage from "./assets/photos/buffBtn.png";
 import damageBtnImage from "./assets/photos/damageBtn.png";
 import tocBtnImage from "./assets/photos/tocBtn.png";
-import dropDownBtnImage from "./assets/photos/dropDownBtn.png";
+// import dropDownBtnImage from "./assets/photos/dropDownBtn.png";
 import homeBrownImage from "./assets/photos/homeBrown.png";
+import debuff from "./assets/photos/debuff.png";
+import combatUtility from "./assets/photos/combatUtility.png";
+import outOfCombat from "./assets/photos/outOfCombat.png";
 import "./assets/spellStyle.css"
 import Axios from "axios";
 import RenderHtml from 'react-native-render-html'
 import { useDispatch, useSelector } from "react-redux";
 import { noPage, selectPage } from "../../features/pageSlice";
-// import moreInfoIcon from "./assets/images/more-info-icon.png"
+import { choosePage } from "../../features/pageSlice";
 
 function SpellPages(){
     let navigate = useNavigate();
@@ -35,11 +38,6 @@ function SpellPages(){
     }
 
 
-    // const getSpells = () => {
-    //     Axios.get("http://localhost:3001/getAllSpells").then((response) => {
-    //         setSpellList(response.data);
-    //     })
-    // }
 
     const getSpellComponents = () => {
         Axios.post("http://localhost:3001/getSpellComponents", {
@@ -90,6 +88,8 @@ function SpellPages(){
         )
     }
 
+
+
     const dispatch = useDispatch();
     const handleTOC = (e) => {
         e.preventDefault();
@@ -97,8 +97,16 @@ function SpellPages(){
         dispatch(noPage());
     }
 
+    const navigationBarClick = (e, spellClass, spellType) => {
+        e.preventDefault();
+
+        dispatch(choosePage({
+        className: spellClass,
+        typeName: spellType,  
+        }))
+    }
+
     useEffect(() => {
-        // getSpells();
         getSpellComponents();
         
     })
@@ -117,9 +125,28 @@ function SpellPages(){
                 <div className="rightIcons">
                     <img className="rightNav" src={homeBrownImage} alt="Home" onClick={() => navigate("/")}/>
                     <img className="rightNav" src={tocBtnImage} alt="TOC" onClick={() => navigate("/tableofContents")}/>
-                    <img className="rightNav" src={damageBtnImage} alt="Damage" onClick={() => {/* Navigate to search page */}}/>
-                    <img className="rightNav" src={buffBtnImage} alt="Buff" onClick={() => {/* Navigate to search page */}}/>
-                    <img className="rightNav" src={dropDownBtnImage} alt="Drop Down" onClick={() => {/* Navigate to search page */}}/>
+                    <img className="rightNav" src={damageBtnImage} alt="Damage" onClick={(e) => {
+                        navigationBarClick(e, pageType.className, "Damage");
+                        navigate("/spellPages")
+                        }}/>
+                    <img className="rightNav" src={buffBtnImage} alt="Buff" onClick={(e) => {
+                        navigationBarClick(e, pageType.className, "Buff");
+                        navigate("/spellPages")
+                        }}/>
+                    <img className="rightNav" src={debuff} alt="Debuff" onClick={(e) => {
+                        navigationBarClick(e, pageType.className, "Debuff");
+                        navigate("/spellPages")
+                        }}/>
+                    <img className="rightNav" src={combatUtility} alt="Combat Utility" onClick={(e) => {
+                        navigationBarClick(e, pageType.className, "Combat Utility");
+                        navigate("/spellPages")
+                        }}/>
+                    <img className="rightNav" src={outOfCombat} alt="Out of Combat" onClick={(e) => {
+                        navigationBarClick(e, pageType.className, "Out of Combat Utility");
+                        navigate("/spellPages")
+                        }}/>
+                    {/* <img className="rightNav" src={dropDownBtnImage} alt="Drop Down" onClick={() =>{}}/> */}
+                    
                 </div>
             </div>
             {/* <div className="sections">
@@ -137,12 +164,12 @@ function SpellPages(){
             
             
             <div className="spellish">
-                <h1>{pageType.className}</h1>
+                {pageType.className === "Arcane Cantrips" ? <h1>{pageType.className} of {pageType.typeName} Type</h1> : <h1>{pageType.className}s of {pageType.typeName} Type</h1>}
+                
 
             <div className="spell">
 
                 <div className = "grid-container">
-                    {/* {console.log(spellList)} */}
                     {spellList.map((val, key) => {
                         let description = {html: `${val.description}`};
 
@@ -184,9 +211,7 @@ function SpellPages(){
                                 <div>
                                 <button className="moreInfoIcons" onClick={openInfo}><img src={"images/more-info-icon.png"} alt="More Information"></img></button>
                                         {active ? "" : showMoreInfo(traditionsArray, val.source)}
-                                        {/* <button onClick={closeInfo}>close</button>
-                                        <button className="moreInfoIcons" onClick={openInfo}><img src={moreInfoIcon} alt="More Information"></img></button>
-                                        <div style={{marginTop: "-10rem"}}>{active ? "" : mapTraditions(traditionsArray)}</div> */}
+                                        
                                     </div>
                                 
                             </div>

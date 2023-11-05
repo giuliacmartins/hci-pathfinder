@@ -47,12 +47,19 @@ body, html {
     align-items: center;
 }
 
+.navbar .downIcons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .navbar img.rightNav {
     margin-right: 7px; 
     cursor: pointer;
     max-width: 37%;
     max-height: auto;
 }
+
 
 .navbar img.search {
     cursor: pointer;
@@ -61,6 +68,7 @@ body, html {
 .navbar img.rightNav {
     cursor: pointer;
 }
+
 
 .navbar img.spellCart {
     margin-top: 10px;
@@ -81,6 +89,8 @@ body, html {
     transform: scale(1.1); 
     transition: transform 0.3s ease-in-out;
 }
+
+
 
 .arcaneHeader, .rightIcons {
     margin-top: -150px;
