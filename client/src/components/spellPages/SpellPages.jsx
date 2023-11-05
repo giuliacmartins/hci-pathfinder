@@ -14,10 +14,14 @@ import homeBrownImage from "./assets/photos/homeBrown.png";
 import "./assets/spellStyle.css"
 import Axios from "axios";
 import RenderHtml from 'react-native-render-html'
+import { useDispatch, useSelector } from "react-redux";
+import { noPage, selectPage } from "../../features/pageSlice";
 // import moreInfoIcon from "./assets/images/more-info-icon.png"
 
 function SpellPages(){
     let navigate = useNavigate();
+
+    const pageType = useSelector(selectPage);
 
     const [spellList, setSpellList] = useState([]);
     const [active, setActive] = useState(true);
@@ -31,8 +35,17 @@ function SpellPages(){
     }
 
 
-    const getSpells = () => {
-        Axios.get("http://localhost:3001/getAllSpells").then((response) => {
+    // const getSpells = () => {
+    //     Axios.get("http://localhost:3001/getAllSpells").then((response) => {
+    //         setSpellList(response.data);
+    //     })
+    // }
+
+    const getSpellComponents = () => {
+        Axios.post("http://localhost:3001/getSpellComponents", {
+            spellClass: pageType.className,
+            spellType: pageType.typeName
+        }).then((response) => {
             setSpellList(response.data);
         })
     }
@@ -77,10 +90,18 @@ function SpellPages(){
         )
     }
 
+    const dispatch = useDispatch();
+    const handleTOC = (e) => {
+        e.preventDefault();
+
+        dispatch(noPage());
+    }
+
     useEffect(() => {
-        getSpells();
+        // getSpells();
+        getSpellComponents();
         
-    }, [])
+    })
     
 
     return(
@@ -116,10 +137,12 @@ function SpellPages(){
             
             
             <div className="spellish">
+                <h1>{pageType.className}</h1>
 
             <div className="spell">
 
                 <div className = "grid-container">
+                    {/* {console.log(spellList)} */}
                     {spellList.map((val, key) => {
                         let description = {html: `${val.description}`};
 
@@ -175,7 +198,9 @@ function SpellPages(){
             </div>
             </div>
             <div className="pagination">
-                <img src={backArrowImage} alt="Previous" onClick={() => navigate("/tableOfContents")}/>
+                <img src={backArrowImage} alt="Previous" onClick={(e) => {
+                    handleTOC(e)
+                    navigate("/tableOfContents")}}/>
                 <img src={forwardArrowImage} alt="Next" onClick={() => navigate("/")}/>
             </div>
         </div>

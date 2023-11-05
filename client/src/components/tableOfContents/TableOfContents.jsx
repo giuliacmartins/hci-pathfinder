@@ -13,9 +13,24 @@ import damageImage from "./assets/photos/damage.png";
 import combatUtilityImage from "./assets/photos/combatUtility.png";
 import buffImage from "./assets/photos/buff.png";
 import backArrowImage from "./assets/photos/backArrow.png";
+import { useDispatch } from "react-redux";
+import { choosePage } from "../../features/pageSlice";
 
 function TableOfContents(){
     let navigate = useNavigate();
+
+    const dispatch = useDispatch();
+
+    const handleClick = (e, spellClass, spellType) => {
+        e.preventDefault();
+
+        dispatch(choosePage({
+        className: spellClass,
+        typeName: spellType,  
+        }))
+    }
+
+
     return(
         <div className="tableOfContentsPage">
             <div className="navbar">
@@ -31,20 +46,72 @@ function TableOfContents(){
                     <div className="arcaneText">
                         <h2><u>Arcane Cantrips</u></h2>
                         <ul> 
-                            <li>Damage<img className="smallImg" src={damageImage} alt="Damage"/></li>
-                            <li>Buff<img className="smallImg2" src={buffImage} alt="Buff"/></li>
-                            <li>Debuff<img className="smallImg2" src={debuffImage} alt="Debuff"/></li>
-                            <li>Combat Utility<img className="smallImg" src={combatUtilityImage} alt="Combat"/></li>
-                            <li>Out of Combat Utility<img className="smallImg" src={outOfCombatUtilityImage} alt="Out of Combat"/></li>
+                            <li>
+                            <button className="typeText" onClick={(e) => {
+                                handleClick(e, "Arcane Cantrips", "Damage")
+                                navigate("/spellPages")
+                                }}>
+                                Damage</button><img className="smallImg" src={damageImage} alt="Damage"/></li>
+                            <li>
+                            <button className="typeText" onClick={(e) => {
+                                handleClick(e, "Arcane Cantrips", "Buff")
+                                navigate("/spellPages")
+                                }}>
+                                Buff</button><img className="smallImg2" src={buffImage} alt="Buff"/></li>
+                            <li>
+                            <button className="typeText" onClick={(e) => {
+                                handleClick(e, "Arcane Cantrips", "Debuff")
+                                navigate("/spellPages")
+                                }}>
+                                Debuff</button><img className="smallImg2" src={debuffImage} alt="Debuff"/></li>
+                            <li>
+                            <button className="typeText" onClick={(e) => {
+                                handleClick(e, "Arcane Cantrips", "Combat Utility")
+                                navigate("/spellPages")
+                                }}>
+                                Combat Utility</button><img className="smallImg" src={combatUtilityImage} alt="Combat"/></li>
+                            <li>
+                            <button className="typeText" onClick={(e) => {
+                                handleClick(e, "Arcane Cantrips", "Out of Combat Utility")
+                                navigate("/spellPages")
+                                }}>
+                                Out of Combat Utility</button><img className="smallImg" src={outOfCombatUtilityImage} alt="Out of Combat"/></li>
                         </ul>
 
                         <h2><u>Arcane 1st-Level Spells</u></h2>
                         <ul> 
-                            <li><button onClick={() => navigate("/spellPages")}>Damage</button><img className="smallImg" src={damageImage} alt="Damage"/></li>
-                            <li>Buff<img className="smallImg2" src={buffImage} alt="Buff"/></li>
-                            <li>Debuff<img className="smallImg2" src={debuffImage} alt="Debuff"/></li>
-                            <li>Combat Utility<img className="smallImg" src={combatUtilityImage} alt="Combat"/></li>
-                            <li>Out of Combat Utility<img className="smallImg" src={outOfCombatUtilityImage} alt="Out of Combat"/></li>
+                            <li>
+                                <button className="typeText" onClick={(e) => {
+                                handleClick(e, "Arcane 1st-Level Spell", "Damage")
+                                navigate("/spellPages")
+                                }}>
+                                Damage
+                                </button><img className="smallImg" src={damageImage} alt="Damage"/></li>
+
+                            <li>
+                            <button className="typeText" onClick={(e) => {
+                                handleClick(e, "Arcane 1st-Level Spell", "Buff")
+                                navigate("/spellPages")
+                                }}>
+                                Buff</button><img className="smallImg2" src={buffImage} alt="Buff"/></li>
+                            <li>
+                            <button className="typeText" onClick={(e) => {
+                                handleClick(e, "Arcane 1st-Level Spell", "Debuff")
+                                navigate("/spellPages")
+                                }}>
+                                Debuff</button><img className="smallImg2" src={debuffImage} alt="Debuff"/></li>
+                            <li>
+                            <button className="typeText" onClick={(e) => {
+                                handleClick(e, "Arcane 1st-Level Spell", "Combat Utility")
+                                navigate("/spellPages")
+                                }}>
+                                Combat Utility</button><img className="smallImg" src={combatUtilityImage} alt="Combat"/></li>
+                            <li>
+                            <button className="typeText" onClick={(e) => {
+                                handleClick(e, "Arcane 1st-Level Spell", "Out of Combat Utility")
+                                navigate("/spellPages")
+                                }}>
+                                Out of Combat Utility</button><img className="smallImg" src={outOfCombatUtilityImage} alt="Out of Combat"/></li>
                         </ul>
                     </div>
                 </div>
@@ -52,11 +119,36 @@ function TableOfContents(){
                     <div className="arcaneText2">
                         <h2><u>Arcane 2nd-Level Spells</u></h2>
                         <ul> 
-                            <li>Damage<img className="smallImg" src={damageImage} alt="Damage"/></li>
-                            <li>Buff<img className="smallImg2" src={buffImage} alt="Buff"/></li>
-                            <li>Debuff<img className="smallImg2" src={debuffImage} alt="Debuff"/></li>
-                            <li>Combat Utility<img className="smallImg" src={combatUtilityImage} alt="Combat"/></li>
-                            <li>Out of Combat Utility<img className="smallImg" src={outOfCombatUtilityImage} alt="Out of Combat"/></li>
+                            <li>
+                            <button className="typeText" onClick={(e) => {
+                                handleClick(e, "Arcane 2nd-Level Spell", "Damage")
+                                navigate("/spellPages")
+                                }}>
+                                Damage</button><img className="smallImg" src={damageImage} alt="Damage"/></li>
+                            <li>
+                            <button className="typeText" onClick={(e) => {
+                                handleClick(e, "Arcane 2nd-Level Spell", "Buff")
+                                navigate("/spellPages")
+                                }}>
+                                Buff</button><img className="smallImg2" src={buffImage} alt="Buff"/></li>
+                            <li>
+                            <button className="typeText" onClick={(e) => {
+                                handleClick(e, "Arcane 2nd-Level Spell", "Debuff")
+                                navigate("/spellPages")
+                                }}>
+                                Debuff</button><img className="smallImg2" src={debuffImage} alt="Debuff"/></li>
+                            <li>
+                            <button className="typeText" onClick={(e) => {
+                                handleClick(e, "Arcane 2nd-Level Spell", "Combat Utility")
+                                navigate("/spellPages")
+                                }}>
+                                Combat Utility</button><img className="smallImg" src={combatUtilityImage} alt="Combat"/></li>
+                            <li>
+                            <button className="typeText" onClick={(e) => {
+                                handleClick(e, "Arcane 2nd-Level Spell", "Out of Combat Utility")
+                                navigate("/spellPages")
+                                }}>
+                                Out of Combat Utility</button><img className="smallImg" src={outOfCombatUtilityImage} alt="Out of Combat"/></li>
                         </ul>
                     </div>
                 </div>

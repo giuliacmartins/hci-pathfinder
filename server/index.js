@@ -34,11 +34,12 @@ app.get('/getAllSpells', (req, res) => {
     });
 });
 
-app.get('/getSpellComponents', (req, res) => {
-    let spellName = req.body.spellName;
-    console.log(spellName);
-    db.query("SELECT component_name FROM `pathfinder-schema`.component_junction WHERE component_name LIKE ?",
-     `%${spellName}%`,
+app.post('/getSpellComponents', (req, res) => {
+    const spellClass = req.body.spellClass;
+    const spellType = req.body.spellType;
+    
+    db.query("SELECT * FROM `pathfinder-schema`.spells WHERE spell_class LIKE ? AND spell_type LIKE ?",
+     [spellClass, spellType],
     (err, result) => {
         if (err){
             console.log("Something wrong with searching in prisoners for medics!");
