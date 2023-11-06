@@ -270,14 +270,14 @@ function SpellPages(){
                             <div key={key} className="spellBox">
                                 <div className="spellPicAndStats">
                                     <div className="spellPic">
-                                        {val.img == null ? <>Hi!</> : <img src={val.img} alt="Spell"></img>}
+                                        {val.img == null ? <>Hi!</> : <img src={val.img} alt="Spell" style={{width: "15rem", margin: "0rem"}}></img>}
                                     </div>
                                 
                                     <div className="spellStats">
                                         <div>
                                             <h1 style={{fontSize:"2rem", textAlign:"left", marginBottom:"-0.5rem"}}>{val.spell_name}</h1>
                                         </div>
-                                        <h2 style={{fontSize:"1.3rem"}}>{val.traits == null ? <></> : mapTraits(traitsArray)}</h2>
+                                        <h2 className="traitsBox" style={{fontSize:"1.3rem"}}>{val.traits == null ? <></> : mapTraits(traitsArray)}</h2>
                                         <div style={{textAlign:"left", fontSize:"1.2rem"}}>
                                             {val.component_abbr == null ? <></> : <p>{mapComponents(componentsArray)}</p>}
                                             {val.range ? <p><b>Range: </b>{val.range}</p> : <></>}

@@ -33,6 +33,18 @@
     align-items: center;
     flex-direction: row;
     column-gap: 2rem;
+    
+}
+
+/* .spellPic{
+    width:1rem;
+} */
+
+.traitsBox{
+    display: flex;
+    flex-direction: row;
+    row-gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .spellTraits{
