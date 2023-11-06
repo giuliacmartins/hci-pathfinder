@@ -188,7 +188,7 @@ function SpellPages(){
 
     return(
         <div className="spellPage">
-            <div className="navbar">
+            <div className="navbarTOC">
                 <div className="leftIcons">
                     {/*openSearch()  showSearch ? "" :*/}
 

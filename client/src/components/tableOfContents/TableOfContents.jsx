@@ -68,8 +68,7 @@ function TableOfContents(){
 
     function SearchBar(){
         return(
-            <div className="searchBar">
-            {/* onChange={event => {setName(event.target.value);}} */}
+            <div className="searchBarTOC">
             <div className="searchTop">
                 <input className="searchInput" type="text"  placeholder = "Spell Name..."
                     onChange={onChange}
@@ -86,7 +85,6 @@ function TableOfContents(){
                     }}>{item.spell_name} </button>
                     
                 ))}
-                {/* <button className="closeBtn" onClick={closeSearch}>Close</button> */}
             </div>
             <button className="closeBtn" onClick={closeSearch}>Close</button>
 
@@ -98,12 +96,12 @@ function TableOfContents(){
     return(
         <div className="tableOfContentsPage">
             <div className="navbar">
-            {showSearch ? <img className="search" src={searchImage} alt="Search" onClick={openSearch}/>: SearchBar()}
+            {showSearch ? <img className="search" src={searchImage} alt="Search" onClick={openSearch} style={{marginTop:"0rem"}}/>: SearchBar()}
             <img className="homeImage" src={homeBlackImage} alt="Home" onClick={() => navigate("/")}/>
             </div>
             <div className="tocTitle">
                 <div className="column half">
-                    <img className="toc" src={tableOfContentsTitle} alt="Table of Contents"/>
+                    <img className="toc" src={tableOfContentsTitle} alt="Table of Contents" style={{marginBottom:'0rem', marginLeft:'-0.3rem'}}/>
                     <img className="leaf" src={leafImage} alt="Leaf"/>
 
                     <div className="arcaneText">
