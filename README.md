@@ -1,4 +1,4 @@
-###USF Human-Computer Interaction Semester Long Project
+USF Human-Computer Interaction Semester Long Project
 Code written by Molina Hoy and Giulia Martins
 
 Redesign the interface of the old Pathfinder wiki website
