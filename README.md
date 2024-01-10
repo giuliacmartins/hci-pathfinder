@@ -1,11 +1,18 @@
 # New Pathfinder Interface - USF Human-Computer Interaction Semester Long Project
 
-<img width="1440" alt="Screenshot 2024-01-10 at 1 57 22 AM" src="https://github.com/giuliacmartins/hci-pathfinder/assets/116525917/7949a748-e4ba-452b-99f4-231eaa4d7a7e">
-
-
-
-
 Code was written by Molina Hoy and Giulia Martins
+
+<img width="1440" alt="Screenshot 2024-01-10 at 1 57 22 AM" src="https://github.com/giuliacmartins/hci-pathfinder/assets/116525917/7949a748-e4ba-452b-99f4-231eaa4d7a7e">
+Homepage
+
+<img width="1440" alt="Screenshot 2024-01-10 at 1 58 28 AM" src="https://github.com/giuliacmartins/hci-pathfinder/assets/116525917/cd33421c-5a62-4638-b5b7-04c0d7d5c235">
+Table of Contents
+
+<img width="1440" alt="Screenshot 2024-01-10 at 1 58 59 AM" src="https://github.com/giuliacmartins/hci-pathfinder/assets/116525917/7c9a6cf7-da29-4125-8a7d-f17dcf2526b0">
+Spells Example
+
+<img width="1440" alt="Screenshot 2024-01-10 at 1 59 19 AM" src="https://github.com/giuliacmartins/hci-pathfinder/assets/116525917/0c2ea964-51ee-43f3-8e25-4ba75c80c996">
+Extra Info 
 
 Redesigned the interface of the old Pathfinder wiki website
 Used HTML and CSS for the appearance of the interface, Javascript to connect to the database, and MySQL to hold the spell data and images. 
