@@ -1,4 +1,10 @@
 # New Pathfinder Interface - USF Human-Computer Interaction Semester Long Project
+
+<img width="1440" alt="Screenshot 2024-01-10 at 1 57 22 AM" src="https://github.com/giuliacmartins/hci-pathfinder/assets/116525917/7949a748-e4ba-452b-99f4-231eaa4d7a7e">
+
+
+
+
 Code was written by Molina Hoy and Giulia Martins
 
 Redesigned the interface of the old Pathfinder wiki website
