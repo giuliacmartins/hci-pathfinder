@@ -18,6 +18,7 @@ Spells Example
 <img width="1440" alt="Screenshot 2024-01-10 at 1 59 19 AM" src="https://github.com/giuliacmartins/hci-pathfinder/assets/116525917/0c2ea964-51ee-43f3-8e25-4ba75c80c996">
 Extra Info 
 
+************************************************************************************************************************************************************************************
 
 Redesigned the interface of the old Pathfinder wiki website
 Used HTML and CSS for the appearance of the interface, Javascript to connect to the database, and MySQL to hold the spell data and images. 
