@@ -18,6 +18,15 @@ Spells Example
 <img width="1440" alt="Screenshot 2024-01-10 at 1 59 19 AM" src="https://github.com/giuliacmartins/hci-pathfinder/assets/116525917/0c2ea964-51ee-43f3-8e25-4ba75c80c996">
 Extra Info 
 
+
+<img width="1440" alt="Screenshot 2024-01-10 at 8 22 05 PM" src="https://github.com/giuliacmartins/hci-pathfinder/assets/116525917/15952cc2-cfea-4977-a683-b61ad988d583">
+Search 
+
+
+<img width="1440" alt="Screenshot 2024-01-10 at 8 22 26 PM" src="https://github.com/giuliacmartins/hci-pathfinder/assets/116525917/3988dcfa-b980-45aa-a061-a8bf384756ef">
+Specific Search for Spell
+
+
 ************************************************************************************************************************************************************************************
 
 Redesigned the interface of the old Pathfinder wiki website
