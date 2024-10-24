@@ -19,8 +19,7 @@ app.listen(3001, ()=>{
 const db = mysql.createConnection({
     user: 'root',
     host: 'localhost',
-    // password: 'Anyaiscool1!', // molina's server
-    password: 'GMar75975!', // giulia's server
+    password: '', 
     database: 'pathfinder-schema',
 });
 
