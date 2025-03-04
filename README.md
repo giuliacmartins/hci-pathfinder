@@ -2,6 +2,10 @@
 
 The code was written by Molina Hoy and Giulia Martins
 
+Figma File: https://www.figma.com/design/77eHmbwDTy7Ke81YUlLtt9/HCI-Project-2023?node-id=0-1&t=bo6jVBRqD2b5IRRy-1
+
+Figma Prototype: https://www.figma.com/proto/77eHmbwDTy7Ke81YUlLtt9/HCI-Project-2023?node-id=0-1&t=bo6jVBRqD2b5IRRy-1
+
 
 <img width="1440" alt="Screenshot 2024-01-10 at 1 57 22 AM" src="https://github.com/giuliacmartins/hci-pathfinder/assets/116525917/7949a748-e4ba-452b-99f4-231eaa4d7a7e">
 Homepage
